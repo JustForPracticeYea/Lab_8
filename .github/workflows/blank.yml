@@ -1,0 +1,14 @@
+name: Push_Dev
+on:
+  push:
+    branches: [ "Dev" ]
+jobs:
+  build:
+    strategy:
+      matrix:
+        version: [6,7,8]
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Run a one-line script
+        run: echo Hello, world!
